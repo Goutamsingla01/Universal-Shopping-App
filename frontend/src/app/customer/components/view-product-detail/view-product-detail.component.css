@@ -1,0 +1,25 @@
+li{
+  list-style: none;
+}
+.addtocart{
+   padding-left: 100px;
+   padding-right: 100px;
+   background-color: transparent;
+   border: 1px solid#8C54A1;
+   color:#8C54A1;
+   transition: background-color 0.5s ease-in;
+}
+.addtocart:hover{
+  background-color: #8C54A1;
+  color:#FAFBD4;
+}
+.addtowish{
+  background-color: transparent;
+   border: 1px solid#8C54A1;
+   color:#8C54A1;
+   transition: background-color 0.5s ease;
+}
+.addtowish:hover{
+  background-color: #8C54A1;
+  color:#FAFBD4;
+}

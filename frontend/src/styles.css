@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+.purple{
+    color:#8C54A1;
+}
+.red{
+    color:red;
+}
+body {
+    background-color: #8c54a114 !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-dialog-container {
+    .mat-mdc-dialog-surface{
+        border-radius: 0.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        
+      }   
+
+  }
+  
