@@ -1,0 +1,96 @@
+<div *ngIf="cartItems.length > 0; else elseblock">
+<div class="container w-75 ">
+  <table class="table table-responsive w-75 mx-auto mt-4 table-bordered table-striped table-hover align-top">
+    <thead>
+      <tr>
+        <th scope="col " >Product Details</th>
+        <th scope="col " >Price</th>
+        <th scope="col " >Quantity</th>
+        <th scope="col " >Total</th>
+        <th scope="col " >Remove</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let item of cartItems" class="">
+        
+          <th scope="row" class="d-flex">
+            <img
+              [src]="item.processedImg"
+              alt="Logo"
+              height="50"
+              class="align-text-top me-4"
+            />
+            <div>
+              {{ item.productName }}
+              <p>{{ item.productName }}</p>
+            </div>
+          </th>
+          <td class="">{{ item.price | currency}}</td>
+          <td >
+            <div class="d-flex justify-content-around align-items-center">
+              <button class="border btn " style="width: 36.5px;" [disabled]="item.quantity==1" (click)="decreaseQuantity(item.productId)">-</button>
+              <span >{{ item.quantity }}</span>
+              <button class="border  btn" (click)="increaseQuantity(item.productId)">+</button>
+            </div>
+          </td>
+          <td >{{ item.price*item.quantity | currency }}</td>
+          <td class="align-text-center" (click)="removeFromCart(item.productId,item.quantity)"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x red" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+          </svg></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container w-75">
+<div class="container w-75 d-flex">
+  <div class="flex-grow-1 pt-2">
+    
+    <h6>PROMOCODE:</h6>
+      <form [formGroup]="couponForm" (ngSubmit)="applyCoupon()" class="row g-3">
+        <div class="col-auto">
+          <label for="disc" class="visually-hidden">Promocode: </label>
+          <input type="text" class="form-control" id="disc" name="code" formControlName="code" placeholder="Code" />
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary ms-2 " [disabled]="couponForm.invalid">Apply</button>
+        </div>
+      </form>
+      <h6 *ngIf="order.couponName !=null">{{order.couponName}} applied successfully</h6>
+    
+  </div>
+  <div class="me-3">
+    <p>Total Price</p>
+    <h5>{{order.totalAmount | currency}}</h5>
+  </div>
+  <div class="me-3">
+    <p>discount</p>
+    <h5>{{order.discount | currency}}</h5>
+  </div>
+  <div>
+    <p>Disc. Price</p>
+    <h5>{{order.amount | currency}}</h5>
+  </div>
+</div>
+<div class="container w-75 d-flex justify-content-end mt-3"><button type="button" class="btn purple yellow" (click)="placeOrder()">Place Order</button></div>
+</div>
+
+</div>
+<ng-template #elseblock >
+  <div class="container" class="d-flex flex-column align-items-center mt-5">
+  <h1>Nothing to show here!</h1>
+  <h2>Please add in cart</h2>
+  <h2>Happy Shopping</h2>
+  <h3>Have a nice day scrolling us :-)</h3>
+</div>
+</ng-template>
+
+<div class="container text-center mt-5">
+  <a routerLink="../dashboard">
+  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"  class="bi bi-arrow-left arrow"  viewBox="0 0 16 16" >
+    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+  </svg>
+</a>
+</div>
+
+
+

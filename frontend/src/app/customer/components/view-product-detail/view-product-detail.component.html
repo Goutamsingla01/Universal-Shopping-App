@@ -1,0 +1,75 @@
+<div *ngIf="product" class="">
+  <div class="d-flex justify-content-start mt-5 px-5">
+    <div class=" ">
+      <img
+        class=""
+        [src]="product.processedImg"
+        alt="Exterior photo of {{ product?.url }}"
+        crossorigin
+        height="500px"
+        width="800px"
+        style="overflow: hidden"
+      />
+    </div>
+    <div class="p-5">
+      <h2 class="">{{ product.name }}</h2>
+      <p class="" style="font-size: 20px; font-weight: 600">
+        MRP: {{ product.price | currency }} 
+      </p>
+      <h4 class="">About this Product</h4>
+      <ul>
+        <li class="mb-1">Product Code: {{ productId }}</li>
+        <li class="mb-2">Produt description: {{ product.description }}</li>
+        <li>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error
+          tempora consectetur blanditiis ea? Aperiam quae assumenda dignissimos
+          vero accusamus? Voluptates officiis impedit earum!
+        </li>
+        <li class="mt-2 mb-5">Product Price: - {{ product.price }}</li>
+      </ul>
+
+      <button class="btn btn-primary addtocart" (click)="onCartClick()">
+        Add to cart-{{ product.price | currency }}
+      </button>
+      <Button class="btn btn-primary ms-3 addtowish" (click)="addToWishlist()"
+        >Add to Wishlist</Button
+      >
+    </div>
+  </div>
+</div>
+<h1 class="text-center mt-5 my-3 pt-4" style="border-top: 1px solid #cbcbc8;">Customer Reviews</h1>
+<div class="container  mx-auto my-5" *ngIf="reviews.length > 0; else elseblock">
+  <div class="container w-50 ">
+    <div class="list-group w-75 mx-auto ">
+      <div class="rounded-top rounded-bottom mb-3" *ngFor="let review of reviews">
+        <a class="list-group-item list-group-item-action" aria-current="true">
+          <div
+            class="d-flex w-100 justify-content-around align align-items-center"
+          >
+            <img
+              [src]="review.processedImg"
+              alt="Logo"
+              height="60"
+              width="60"
+              class="align-text-top me-4"
+            />
+            <div>
+              <p class="mb-1">Reviewed by: {{ review.username }}</p>
+              <p class="mb-1">{{ review.description }}</p>
+              <p class="mb-1">Rating: {{ review.rating }} stars</p>
+              
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #elseblock >
+  <div class="container text-center mb-5" style="font-size: larger;">
+  <p>No reviews to share</p>
+  <p>Be the first one to review</p>
+</div>
+</ng-template>
+
+<app-footer></app-footer>
