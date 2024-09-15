@@ -11,20 +11,32 @@ export class UserStorageService {
   constructor() { }
 
   public saveToken(token: string): void{
+    if (typeof window !== 'undefined' && window.localStorage) {
   window.localStorage.removeItem(TOKEN);
   window.localStorage.setItem(TOKEN, token);
+    }
+    return null;
 }
 public saveUser(user): void{
+  if (typeof window !== 'undefined' && window.localStorage) {
   window.localStorage.removeItem(USER);
   window.localStorage.setItem(USER, JSON.stringify(user));
+  }
+  return null;
 }
 
 static getToken():string{
+  if (typeof window !== 'undefined' && window.localStorage) {
   return localStorage.getItem(TOKEN);
+  }
+  return null;
 }
 
 static getUser():any{
+  if (typeof window !== 'undefined' && window.localStorage) {
   return JSON.parse(localStorage.getItem(USER));
+  }
+  return null;
 }
 
 static getUserId():string{
@@ -59,7 +71,10 @@ static isCustomerLoggedIn():boolean{
 }
 
 static signOut():void{
+  if (typeof window !== 'undefined' && window.localStorage) {
   window.localStorage.removeItem(TOKEN);
   window.localStorage.removeItem(USER);
+  }
+  return null;
 }
 }
