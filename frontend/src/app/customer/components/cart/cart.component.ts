@@ -1,6 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { ProductsService } from '../../../products.service';
-import { Product } from '../../../product';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CustomerService } from '../../services/customer.service';
