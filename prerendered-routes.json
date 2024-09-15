@@ -1,0 +1,23 @@
+{
+  "routes": [
+    "/home",
+    "/home/admin",
+    "/home/admin/coupons",
+    "/home/admin/dashboard",
+    "/home/admin/orders",
+    "/home/admin/post-coupon",
+    "/home/admin/product",
+    "/home/customer",
+    "/home/customer/cart",
+    "/home/customer/dashboard",
+    "/home/customer/land",
+    "/home/customer/my-orders",
+    "/home/customer/support",
+    "/home/customer/support/form-submitted",
+    "/home/customer/wishlist",
+    "/home/login",
+    "/home/signup",
+    "/home/support",
+    "/home/support/form-submitted"
+  ]
+}
