@@ -30,12 +30,15 @@
             <li class="spe mb-2"><a routerLink="/home/customer/land" *ngIf="isCustomerLoggedIn else elseblock" class="astyle">About Us</a>
               <ng-template #elseblock><a routerLink="/home" class="astyle">About Us</a></ng-template>
             </li>
+            <li class="spe mb-2"><a href="https://goutam-blogging.netlify.app/lessons-learned" class="astyle">Blog</a>
+            </li>
             <li class="spe mb-2"><a routerLink="/home/customer/support" *ngIf="isCustomerLoggedIn else elseblock2" class="astyle">Support</a>
               <ng-template #elseblock2><a routerLink="/home/support" class="astyle">Support</a></ng-template>
             </li>
             <li class="spe mb-2"><a routerLink="/home/customer/dashboard" *ngIf="isCustomerLoggedIn else elseblock3" class="astyle">Our Products</a>
               <ng-template #elseblock3><a  class="astyle" routerLink="login">Our Products</a></ng-template>
             </li>
+            
         </ul></div>
         <div class="yellow-text ">
             <ul class="list">
