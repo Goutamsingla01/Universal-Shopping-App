@@ -5,17 +5,17 @@
               [src]="product.processedImg"
               class="card-img-top"
               alt="..."
-              style="height: 45%"
+              style="height: 65%"
               routerLink="/home/customer/product/{{product.id}}"
             />
-            <div class="card-body" >
+            <div class="card-body" style="height: 26%;">
               <h5 class="card-title" routerLink="/home/customer/product/{{product.id}}">{{ product.name }}</h5>
               <p class="card-text">Red Tape</p>
               <p class="card-text " >
                 {{ product.description }} 
               </p>
               </div>
-              <div class="card-footer" >
+              <div class="card-footer" style="height: 9%;" >
               <div class="d-flex justify-content-around ">
                 <p class="card-text pe-4"> {{ product.price |currency }}</p>
                 <a ><svg
