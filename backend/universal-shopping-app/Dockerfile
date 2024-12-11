@@ -10,8 +10,7 @@ FROM maven:3.9.4-eclipse-temurin-21 as build
 WORKDIR /app
 
 # Copy the pom.xml and other necessary files to the container
-COPY pom.xml .
-COPY src ./src
+COPY . .
 
 # Build the application (this will generate the .jar file in target/)
 RUN mvn clean package -DskipTests
