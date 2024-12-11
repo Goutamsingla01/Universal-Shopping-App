@@ -18,9 +18,6 @@ public class AuthServiceImpl implements AuthService{
     @Autowired
     private UserRepositry userRepositry;
 
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-
 
     @Autowired
     private OrderRepositry orderRepositry;
